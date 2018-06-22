@@ -229,7 +229,7 @@ int main() {
                 cout << "█ Casa " << player.pos << ") " << "Você encontrou um baú e ganhou [20] de OURO!" << endl << endl;
 
             }else{
-                int value = rand()%17;
+                int value = rand()%15;
                 cout << "█ Casa " << player.pos << ") " <<  "Você deseja comprar o item \"" << loja[value] << "\" por [10] de OURO? (S)im ou (N)ão?" << endl;
                 cin >> opt;
                 if(toupper(opt) == 'S'){

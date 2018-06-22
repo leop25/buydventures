@@ -1,78 +1,10 @@
 #include <iostream>
 #include <string.h>
 #include <locale.h>
+#include "buydventures.h"
 #define tamanho 10
 
 using namespace std;
-
-string loja[20] = {"Ametista", "Diamante", "Rubi", "BARRA DE FERRO MUITO PESADA", "Veneno pra goblin (Não tenho certeza se funciona)",
-                   "Batata Frita", "Hamburguer", "Refrigerante", "Livro \"Como Conquistar o Amor da sua Vida\"", "Anel de ouro", "Taça do Hexa", "Bolsa da Gucci",
-                   "Camiseta SUPREME", "Cinto Off-White", "Primeiro lote do TUSCA"};
-
-//Definição da Pilha
-typedef struct{
-    int topo ;
-    string item[tamanho] ;
-}Pilha;
-
-void iniciaPilha (Pilha &p) {
-    p.topo = -1 ;
-}
-
-bool pilhaVazia(Pilha p){
-    if(p.topo == -1 )
-        return true;
-    else
-        return false;
-}
-
-bool pilhaCheia(Pilha p){
-    if (p.topo == tamanho-1)
-        return true;
-    else
-        return false;
-}
-
-void empilha(Pilha &p, int x){
-    p.item[++p.topo]=loja[x];
-}
-
-string desempilha(Pilha &p){
-    return (p.item[p.topo--]) ;
-}
-
-//Definição de itens de jogo
-typedef struct{
-    int gold = 100;
-    int goblin[5];
-    int bau[5];
-    int pos = 0;
-    int luck = 0;
-    int fim[11] = {0,0,0,0,0,0,0,0,0,0,0};
-    Pilha inv;
-}Tabuleiro;
-
-bool isGoblin(Tabuleiro *t){
-    return t->pos == t->goblin[0] || t->pos == t->goblin[1] || t->pos == t->goblin[2];
-}
-
-bool isChest(Tabuleiro *t){
-    return t->pos == t->bau[0] || t->pos == t->bau[1] || t->pos == t->bau[2];
-}
-
-void geraCasas(Tabuleiro *t){
-    iniciaPilha(t->inv);
-    t->goblin[0] = rand()%24;
-    t->goblin[1] = rand()%24;
-    t->goblin[2] = rand()%24;
-    t->goblin[3] = rand()%24;
-    t->goblin[4] = rand()%24;
-    t->bau[0] = rand()%24;
-    t->bau[1] = rand()%24;
-    t->bau[2] = rand()%24;
-    t->bau[3] = rand()%24;
-    t->bau[4] = rand()%24;
-}
 
 int main() {
     setlocale(LC_ALL, "");
@@ -87,7 +19,7 @@ int main() {
     //Gameplay
     cout << "██████████████████████████████ BEM VINDO AO JOGO \"BuyDventure: Uma aventura na dungeon das compras\"! ██████████████████████████████" << endl;
     cout << "█ Nesse jogo você passeia por uma dungeon cheia de vendedores dispostos a te vender os mais doidos itens de todo o reino, e fica  █" << endl <<
-            "█ ao seu julgamento comprar tais itens ou não...                                                                                  █" << endl
+         "█ ao seu julgamento comprar tais itens ou não...                                                                                  █" << endl
          << "█ Mas lembre-se: Cada item influencia nas conquistas ao final do jogo, por isso fique esperto! Cada coisa irá contar!             █" << endl
          << "█ Ah, já ia esquecendo de avisar, tem uns GOBLINS que ficam importunando a vida de quem passeia pela dungeon...                   █" << endl
          << "█ Tome cuidado, além de comerem qualquer coisa, inclusive todos seus itens... Ainda bem que são alérgicos a ferro...              █" << endl
@@ -166,7 +98,7 @@ int main() {
             }else{
                 cout << "█ Andar (1) ou (2) casas?" << endl;
                 cin >> opt;
-               while (opt != '1' && opt != '2') {
+                while (opt != '1' && opt != '2') {
                     cout << "█ Input inválido, escreva novamente..." << endl;
                     cin >> opt;
                 }
@@ -213,7 +145,7 @@ int main() {
                                 break;
                             }else
                                 aux = 0;
-                                cout << "█ Você perdeu o item \"" << lastItem << "\"!" << endl;
+                            cout << "█ Você perdeu o item \"" << lastItem << "\"!" << endl;
                         }
                         if(aux == 0) {
                             cout << "█ Você foi derrotado! O GOBLIN comeu seus itens e levou [20] de OURO... Agora você tem [" << player.gold << "] de OURO..." << endl << endl;

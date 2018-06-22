@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string.h>
-#include <locale.h>
+#include <cstring>
+#include <clocale>
 #include "buydventures.h"
 #define tamanho 10
 

@@ -113,6 +113,13 @@ int main() {
         while(player.pos < 25){
             //Andar
             if(player.pos >= 23){
+                cout << "█ Finalizar o jogo? (S)im ou (N)ão?" << endl;
+                cin >> opt;
+                while(toupper(opt) != 'S' && toupper(opt) != 'N'){
+                    cout << "█ Input inválido, escreva novamente..." << endl;
+                    cin >> opt;
+                }
+                if(toupper(opt) == 'S' || toupper(opt) == 'N'){
                     cout << "█ Fim de jogo! Agora deixa eu analisar seu inventário rapidinho..." << endl;
                     if(pilhaVazia(player.inv)){
                         if(player.gold < 100){
@@ -153,8 +160,9 @@ int main() {
                         }else if(lastItem == loja[14]){
                             cout << "██ Com esse ingresso eu só consigo dizer uma coisa… JÁ É JOGOS MERMÃO! XUPA CAASO!" << endl;
                         }
-                        return 0;
                     }
+                    return 0;
+                }
             }else{
                 cout << "█ Andar (1) ou (2) casas?" << endl;
                 cin >> opt;

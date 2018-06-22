@@ -1,7 +1,7 @@
 #ifndef UNTITLED7_BUYDVENTURES_H
 #define UNTITLED7_BUYDVENTURES_H
 #include <iostream>
-#include <string.h>
+#include <cstring>
 #define tamanho 10
 
 using namespace std;

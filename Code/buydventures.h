@@ -45,7 +45,7 @@ string desempilha(Pilha &p){
 //Definição de itens de jogo
 
 typedef struct{
-    int gold = 100;
+    int gold = 70;
     int goblin[5];
     int bau[5];
     int pos = 0;

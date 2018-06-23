@@ -25,6 +25,7 @@ int main() {
          << "█ Tome cuidado, além de comerem qualquer coisa, inclusive todos seus itens... Ainda bem que são alérgicos a ferro...              █" << endl
          << "█                                                                                                                                 █" << endl
          << "█ A dungeon tem 5 goblins e 5 baús escondidos por aí, então escolha bem os passos que irá tomar...                                █" << endl
+         << "█ Você tem 70 de GOLD, e seu inventário tem um limite de 10 itens, então gaste sabiamente.                                        █" << endl
          << "█████████████████████████████████████████████████ DICAS PARA AS CONQUISTAS ████████████████████████████████████████████████████████" << endl
          << "█ 1) VERGONHA                                                                                                                     █" << endl
          << "█ 2) Desperdício de tempo                                                                                                         █" << endl

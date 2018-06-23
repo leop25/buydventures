@@ -167,7 +167,9 @@ int main() {
                 if(toupper(opt) == 'S'){
                     if(player.gold < 10){
                         cout << "█ Desculpe, mas você não tem ouro suficiente pra isso..." << endl << endl;
-                    }else {
+                    }else if(pilhaCheia(player.inv)){
+                    	cout << "█ Desculpe, mas você não tem espaço no seu inventário..." << endl << endl;
+                    }else{
                         player.gold -= 10;
                         empilha(player.inv, value);
                         cout << "█ Obrigado pela sua aquisição" << endl;

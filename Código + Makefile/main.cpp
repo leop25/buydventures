@@ -55,13 +55,13 @@ int main() {
                 if(toupper(opt) == 'S' || toupper(opt) == 'N'){
                     cout << "█ Fim de jogo! Agora deixa eu analisar seu inventário rapidinho..." << endl;
                     if(pilhaVazia(player.inv)){
-                        if(player.gold < 100){
+                        if(player.gold < 70){
                             cout << "Você saiu pior do que você entrou… Você é realmente ruim nisso… Não tem nem muito o que eu comentar aqui… Você envergonha seus antepassados…" << endl;
-                        }else if(player.gold >= 100 && player.gold < 200){
+                        }else if(player.gold >= 70 && player.gold < 170){
                             cout << "Bem, você de fato ganhou um dinheirinho… Podia ter alguns itens pra chamar atenção pelo menos, mas assim tá ok, parabéns" << endl;
-                        }else if(player.gold == 100){
+                        }else if(player.gold == 70){
                             cout << "Se você entrou do jeito que saiu, então por que veio? Que desperdício de tempo viu…" << endl;
-                        }else if(player.gold == 200){
+                        }else if(player.gold == 170){
                             cout << "Uau! Você realmente não veio pra brincadeira! Achou todos os tesouros dos quais já ouvi falar! Já pensou em jogar na loteria?" << endl;
                         }
                     }
